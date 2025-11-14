@@ -28,11 +28,13 @@ public class Inventory {
         vehicles.add(vehicle); // lägger till en ny bil
     }
 
+    // Metod för att visa alla bilar (den här metoden saknades!)
+    public void printVehicles() {
         System.out.println("Bilar i lagret:");
-    int count = 1; // startar numreringen från 1
+        int count = 1; // startar numreringen från 1
         for (Vehicle car : vehicles) { // car istället för v
-        System.out.println(count + ": " + car);
-        count++; // ökar räknaren för varje bil
+            System.out.println(count + ": " + car);
+            count++; // ökar räknaren för varje bil
+        }
     }
-}
 }
