@@ -34,121 +34,129 @@ public class Main {
             input.nextLine(); // Tar bort enter-tryckningen
 
             // Kollar vad användaren valde
-            if (val == 1) {
-                // Visa alla bilar som finns
-                int nr = 1; // Räknare för numrering
-                for (Item bil : inventory.getVehicles()) {
-                    System.out.println(nr + ". " + bil);
-                    nr = nr + 1; // Ökar med 1 för varje bil
-                }
-
-            } else if (val == 2) {
-                // Visa alla medlemmar
-                memberRegistry.printMembers();
-
-            } else if (val == 3) {
-                // Lägg till ny medlem
-                System.out.print("Namn: ");
-                String namn = input.nextLine(); // Läser in namnet
-
-                System.out.print("Medlemskap (Standard/Student): ");
-                String typ = input.nextLine(); // Läser in typen
-
-                // Skapar ny medlem med namn och typ
-                Member nyMedlem = new Member(namn, typ);
-                memberRegistry.addMember(nyMedlem); // Lägger till i registret
-                System.out.println("Medlem tillagd!");
-
-            } else if (val == 4) {
-                // Ändra medlemskap
-                System.out.println("Välj medlem:");
-
-                int nummer = 1;
-                for (Member m : memberRegistry.getAllMembers()) {
-                    System.out.println(nummer + ". " + m);
-                    nummer = nummer + 1;
-                }
-
-                System.out.print("Nummer: ");
-                int medlemNr = input.nextInt();
-                input.nextLine(); // Tar bort enter-tryckningen
-                Member medlem = memberRegistry.getAllMembers().get(medlemNr - 1);
-
-                System.out.println("Nytt medlemskap:");
-                System.out.println("1. Standard");
-                System.out.println("2. Student");
-                System.out.print("Välj: ");
-                int typVal = input.nextInt();
-                input.nextLine(); // Tar bort enter-tryckningen
-
-                if (typVal == 1) {
-                    membershipService.setStandard(medlem);
-                } else if (typVal == 2) {
-                    membershipService.setStudent(medlem);
-                }
-
-            } else if (val == 5) {
-                // Hyr ett fordon
-                System.out.println("Välj medlem:");
-
-                // Visar alla medlemmar med nummer
-                int nummer = 1;
-                for (Member m : memberRegistry.getAllMembers()) {
-                    System.out.println(nummer + ". " + m);
-                    nummer = nummer + 1;
-                }
-
-                // Användaren väljer medlem
-                System.out.print("Nummer: ");
-                int medlemNr = input.nextInt();
-                input.nextLine(); // Tar bort enter-tryckningen
-                // Hämtar den valda medlemmen (minus 1 för att listor börjar på 0)
-                Member medlem = memberRegistry.getAllMembers().get(medlemNr - 1);
-
-                System.out.println("Välj fordon:");
-
-                // Visar alla fordon med nummer
-                nummer = 1;
-                for (Item f : inventory.getVehicles()) {
-                    System.out.println(nummer + ". " + f);
-                    nummer = nummer + 1;
-                }
-
-                // Användaren väljer fordon
-                System.out.print("Nummer: ");
-                int fordonNr = input.nextInt();
-                input.nextLine(); // Tar bort enter-tryckningen
-                // Hämtar det valda fordonet
-                Item fordon = inventory.getVehicles().get(fordonNr - 1);
-
-                // Frågar hur många dagar
-                System.out.print("Antal dagar: ");
-                int dagar = input.nextInt();
-                input.nextLine(); // Tar bort enter-tryckningen
-
-                // Skapar uthyrningen
-                rentalService.rentVehicle(medlem, fordon, dagar);
-
-            } else if (val == 6) {
-                // Visa alla uthyrningar som har gjorts
-                System.out.println("Uthyrningar:");
-
-                // Kollar om det finns några uthyrningar
-                if (rentalService.getRentals().isEmpty()) {
-                    System.out.println("Inga uthyrningar än");
-                } else {
-                    // Skriver ut varje uthyrning
-                    for (Rental r : rentalService.getRentals()) {
-                        System.out.println(r);
+            switch (val) {
+                case 1:
+                    // Visa alla bilar som finns
+                    int nummer = 1; // Räknare för numrering
+                    for (Item fordon : inventory.getVehicles()) {
+                        System.out.println(nummer + ". " + fordon);
+                        nummer = nummer + 1; // Ökar med 1 för varje bil
                     }
-                    // Visar totala inkomsten
-                    System.out.println("Total inkomst: " + rentalService.getTotalIncome() + " kr");
-                }
+                    break;
 
-            } else if (val == 0) {
-                // Avslutar programmet
-                System.out.println("Hej då!");
-                running = false; // Gör att while-loopen slutar
+                case 2:
+                    // Visa alla medlemmar
+                    memberRegistry.printMembers();
+                    break;
+
+                case 3:
+                    // Lägg till ny medlem
+                    System.out.print("Namn: ");
+                    String namn = input.nextLine(); // Läser in namnet
+
+                    System.out.print("Medlemskap (Standard/Student): ");
+                    String typ = input.nextLine(); // Läser in typen
+
+                    // Skapar ny medlem med namn och typ
+                    Member nyMedlem = new Member(namn, typ);
+                    memberRegistry.addMember(nyMedlem); // Lägger till i registret
+                    System.out.println("Medlem tillagd!");
+                    break;
+
+                case 4:
+                    // Ändra medlemskap
+                    System.out.println("Välj medlem:");
+
+                    int nummer2 = 1;
+                    for (Member member : memberRegistry.getAllMembers()) {
+                        System.out.println(nummer2 + ". " + member);
+                        nummer2 = nummer2 + 1;
+                    }
+
+                    System.out.print("Nummer: ");
+                    int medlemNummer = input.nextInt();
+                    input.nextLine(); // Tar bort enter-tryckningen
+                    Member valdMedlem = memberRegistry.getAllMembers().get(medlemNummer - 1);
+
+                    System.out.println("Nytt medlemskap:");
+                    System.out.println("1. Standard");
+                    System.out.println("2. Student");
+                    System.out.print("Välj: ");
+                    int typVal = input.nextInt();
+                    input.nextLine(); // Tar bort enter-tryckningen
+
+                    if (typVal == 1) {
+                        membershipService.setStandard(valdMedlem);
+                    } else if (typVal == 2) {
+                        membershipService.setStudent(valdMedlem);
+                    }
+                    break;
+
+                case 5:
+                    // Hyr ett fordon
+                    System.out.println("Välj medlem:");
+
+                    // Visar alla medlemmar med nummer
+                    int nummer3 = 1;
+                    for (Member member : memberRegistry.getAllMembers()) {
+                        System.out.println(nummer3 + ". " + member);
+                        nummer3 = nummer3 + 1;
+                    }
+
+                    // Användaren väljer medlem
+                    System.out.print("Nummer: ");
+                    int medlemNummer2 = input.nextInt();
+                    input.nextLine(); // Tar bort enter-tryckningen
+                    // Hämtar den valda medlemmen (minus 1 för att listor börjar på 0)
+                    Member valdMedlem2 = memberRegistry.getAllMembers().get(medlemNummer2 - 1);
+
+                    System.out.println("Välj fordon:");
+
+                    // Visar alla fordon med nummer
+                    int nummer4 = 1;
+                    for (Item fordon : inventory.getVehicles()) {
+                        System.out.println(nummer4 + ". " + fordon);
+                        nummer4 = nummer4 + 1;
+                    }
+
+                    // Användaren väljer fordon
+                    System.out.print("Nummer: ");
+                    int fordonNummer = input.nextInt();
+                    input.nextLine(); // Tar bort enter-tryckningen
+                    // Hämtar det valda fordonet
+                    Item valtFordon = inventory.getVehicles().get(fordonNummer - 1);
+
+                    // Frågar hur många dagar
+                    System.out.print("Antal dagar: ");
+                    int dagar = input.nextInt();
+                    input.nextLine(); // Tar bort enter-tryckningen
+
+                    // Skapar uthyrningen
+                    rentalService.rentVehicle(valdMedlem2, valtFordon, dagar);
+                    break;
+
+                case 6:
+                    // Visa alla uthyrningar som har gjorts
+                    System.out.println("Uthyrningar:");
+
+                    // Kollar om det finns några uthyrningar
+                    if (rentalService.getRentals().isEmpty()) {
+                        System.out.println("Inga uthyrningar än");
+                    } else {
+                        // Skriver ut varje uthyrning
+                        for (Rental rental : rentalService.getRentals()) {
+                            System.out.println(rental);
+                        }
+                        // Visar totala inkomsten
+                        System.out.println("Total inkomst: " + rentalService.getTotalIncome() + " kr");
+                    }
+                    break;
+
+                case 0:
+                    // Avslutar programmet
+                    System.out.println("tack");
+                    running = false; // Gör att while-loopen slutar
+                    break;
             }
         }
 
