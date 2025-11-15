@@ -3,12 +3,12 @@ package Biluthyrning;
 // En uthyrning: kopplar ihop medlem, fordon, dagar och pris
 public class Rental {
 
-    private Member member;     // Vem hyr
-    private Vehicle vehicle;   // Vad som hyrs
-    private int days;          // Hur många dagar
-    private double totalPrice; // Slutpris
+    private Member member;
+    private Item vehicle;
+    private int days;
+    private double totalPrice;
 
-    public Rental(Member member, Vehicle vehicle, int days, PricePolicy policy) {
+    public Rental(Member member, Item vehicle, int days, PricePolicy policy) {
         this.member = member;
         this.vehicle = vehicle;
         this.days = days;
@@ -18,7 +18,7 @@ public class Rental {
     }
 
     public Member getMember() { return member; }
-    public Vehicle getVehicle() { return vehicle; }
+    public Item getVehicle() { return vehicle; }
     public int getDays() { return days; }
     public double getTotalPrice() { return totalPrice; }
 
@@ -26,7 +26,6 @@ public class Rental {
     public String toString() {
         return member.getName() +
                 " hyr " + vehicle.getName() +
-                " (" + vehicle.getBrand() + " " + vehicle.getModel() + ")" +
                 " i " + days + " dagar, pris " + totalPrice + " kr";
     }
 }

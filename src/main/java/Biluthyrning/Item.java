@@ -17,8 +17,4 @@ public abstract class Item {
     public double getDailyPrice() {
         return dailyPrice;
     }
-
-    public void setDailyPrice(double dailyPrice) {
-        this.dailyPrice = dailyPrice;
-    }
 }

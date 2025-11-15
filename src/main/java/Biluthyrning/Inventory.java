@@ -6,7 +6,7 @@ import java.util.List;
 // Håller reda på alla bilar som finns att hyra
 public class Inventory {
 
-    private List<Vehicle> vehicles = new ArrayList<>();
+    private List<Item> vehicles = new ArrayList<>();
 
     public Inventory() {
         visaBilar(); // lägger in bilar vid start
@@ -22,7 +22,7 @@ public class Inventory {
         vehicles.add(new Motorcycle("Honda CBR", "Honda", "CBR600RR", 450));
     }
 
-    public List<Vehicle> getVehicles() {
+    public List<Item> getVehicles() {
         return vehicles; // returnerar listan med alla bilar
     }
 }

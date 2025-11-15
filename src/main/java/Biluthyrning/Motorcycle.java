@@ -26,3 +26,4 @@ public class Motorcycle extends Item {
         return getName() + ", " + getDailyPrice() + ", " + getBrand() + ", " + getModel();
         // format: namn, pris, märke, modell
     }
+}

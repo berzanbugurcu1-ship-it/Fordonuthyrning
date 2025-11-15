@@ -7,7 +7,6 @@ import java.util.List;
 public class MemberRegistry {
 
     private List<Member> members = new ArrayList<>();
-    // Lista som lagrar alla medlem-objekt
 
     // Lägger till en medlem i registret
     public void addMember(Member member) {
@@ -19,21 +18,6 @@ public class MemberRegistry {
     // Returnerar hela medlemslistan
     public List<Member> getAllMembers() {
         return members;
-    }
-
-    // Söker efter en medlem baserat på exakt namn
-    public Member findByName(String name) {
-        if (name == null) return null;
-
-        String trimmed = name.trim(); // Tar bort onödiga mellanslag
-
-        for (Member m : members) {
-            // Jämför exakt namn med equals
-            if (m.getName().equals(trimmed)) {
-                return m; // Hittad
-            }
-        }
-        return null; // Ingen medlem matchade
     }
 
     // Skriver ut alla medlemmar i konsolen

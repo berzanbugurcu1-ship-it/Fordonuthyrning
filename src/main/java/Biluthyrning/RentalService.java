@@ -21,8 +21,8 @@ public class RentalService {
         return new StandardPricing();
     }
 
-    // Hyr ut en bil till en medlem under ett visst antal dagar
-    public void rentVehicle(Member member, Vehicle car, int days) {
+    // Hyr ut ett fordon till en medlem under ett visst antal dagar
+    public void rentVehicle(Member member, Item car, int days) {
 
         // Hämtar prissättningen beroende på medlemsnivån
         PricePolicy policy = choosePolicy(member);
@@ -51,4 +51,3 @@ public class RentalService {
         return rentals;
     }
 }
-
