@@ -1,4 +1,4 @@
-package org.Biluthyrning;
+package Biluthyrning;
 
 // Studentpris: 20% rabatt
 public class StudentPricing implements PricePolicy {

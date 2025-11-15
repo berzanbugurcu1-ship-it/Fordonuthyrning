@@ -1,4 +1,4 @@
-package org.Biluthyrning;
+package Biluthyrning;
 
 public class StandardPricing implements PricePolicy {
 

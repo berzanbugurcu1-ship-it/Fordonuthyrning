@@ -1,4 +1,4 @@
-package org.Biluthyrning;
+package Biluthyrning;
 
 public interface PricePolicy {
     double calculatePrice(double dailyPrice, int days);
