@@ -1,4 +1,4 @@
-package Biluthyrning;
+package Fordonuthyrning;
 
 import java.util.ArrayList;
 import java.util.List;

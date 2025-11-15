@@ -1,4 +1,4 @@
-package Biluthyrning;
+package Fordonuthyrning;
 
 // Studentpris: 20% rabatt
 public class StudentPricing implements PricePolicy {

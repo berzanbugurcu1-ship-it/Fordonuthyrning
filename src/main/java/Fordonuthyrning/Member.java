@@ -1,4 +1,4 @@
-package Biluthyrning;
+package Fordonuthyrning;
 
 // Klass som representerar en medlem i systemet
 public class Member {

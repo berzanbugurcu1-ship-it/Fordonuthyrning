@@ -1,4 +1,4 @@
-package Biluthyrning;
+package Fordonuthyrning;
 
 public interface PricePolicy {
     double calculatePrice(double dailyPrice, int days);

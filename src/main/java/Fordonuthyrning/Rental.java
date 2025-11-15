@@ -1,4 +1,4 @@
-package Biluthyrning;
+package Fordonuthyrning;
 
 // En uthyrning: kopplar ihop medlem, fordon, dagar och pris
 public class Rental {

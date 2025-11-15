@@ -1,4 +1,4 @@
-package Biluthyrning;
+package Fordonuthyrning;
 
 // Hanterar ändring av medlemsnivå
 public class MembershipService {

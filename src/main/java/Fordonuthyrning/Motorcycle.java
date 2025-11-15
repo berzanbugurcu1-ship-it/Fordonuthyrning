@@ -1,4 +1,4 @@
-package Biluthyrning;
+package Fordonuthyrning;
 
 // En motorcykel som kan hyras, ärver egenskaper från Item
 public class Motorcycle extends Item {

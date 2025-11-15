@@ -1,4 +1,4 @@
-package Biluthyrning;
+package Fordonuthyrning;
 
 public class StandardPricing implements PricePolicy {
 

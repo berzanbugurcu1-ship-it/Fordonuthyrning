@@ -1,4 +1,4 @@
-package Biluthyrning;
+package Fordonuthyrning;
 
 // En fordonstyp som kan hyras, ärver egenskaper från Item
 public class Vehicle extends Item {
