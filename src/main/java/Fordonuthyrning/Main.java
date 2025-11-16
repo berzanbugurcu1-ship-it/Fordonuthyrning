@@ -76,7 +76,7 @@ public class Main {
                     System.out.print("Nummer: ");
                     int medlemNummer = input.nextInt();
                     input.nextLine(); // Tar bort enter-tryckningen
-                    Member valdMedlem = memberRegistry.getAllMembers().get(medlemNummer - 1);
+                    Member member = memberRegistry.getAllMembers().get(medlemNummer - 1);
 
                     System.out.println("Nytt medlemskap:");
                     System.out.println("1. Standard");
@@ -86,9 +86,9 @@ public class Main {
                     input.nextLine(); // Tar bort enter-tryckningen
 
                     if (typVal == 1) {
-                        membershipService.setStandard(valdMedlem);
+                        membershipService.setStandard(member);
                     } else if (typVal == 2) {
-                        membershipService.setStudent(valdMedlem);
+                        membershipService.setStudent(member);
                     }
                     break;
 
@@ -98,8 +98,8 @@ public class Main {
 
                     // Visar alla medlemmar med nummer
                     int nummer3 = 1;
-                    for (Member member : memberRegistry.getAllMembers()) {
-                        System.out.println(nummer3 + ". " + member);
+                    for (Member member2 : memberRegistry.getAllMembers()) {
+                        System.out.println(nummer3 + ". " + member2);
                         nummer3 = nummer3 + 1;
                     }
 
@@ -108,7 +108,7 @@ public class Main {
                     int medlemNummer2 = input.nextInt();
                     input.nextLine(); // Tar bort enter-tryckningen
                     // Hämtar den valda medlemmen (minus 1 för att listor börjar på 0)
-                    Member valdMedlem2 = memberRegistry.getAllMembers().get(medlemNummer2 - 1);
+                    Member member2 = memberRegistry.getAllMembers().get(medlemNummer2 - 1);
 
                     System.out.println("Välj fordon:");
 
@@ -124,15 +124,15 @@ public class Main {
                     int fordonNummer = input.nextInt();
                     input.nextLine(); // Tar bort enter-tryckningen
                     // Hämtar det valda fordonet
-                    Item valtFordon = inventory.getVehicles().get(fordonNummer - 1);
+                    Item vehicle = inventory.getVehicles().get(fordonNummer - 1);
 
                     // Frågar hur många dagar
                     System.out.print("Antal dagar: ");
-                    int dagar = input.nextInt();
+                    int days = input.nextInt();
                     input.nextLine(); // Tar bort enter-tryckningen
 
                     // Skapar uthyrningen
-                    rentalService.rentVehicle(valdMedlem2, valtFordon, dagar);
+                    rentalService.rentVehicle(member2, vehicle, days);
                     break;
 
                 case 6:
