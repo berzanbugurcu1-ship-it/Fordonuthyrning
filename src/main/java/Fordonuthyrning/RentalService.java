@@ -22,13 +22,13 @@ public class RentalService {
     }
 
     // Hyr ut ett fordon till en medlem under ett visst antal dagar
-    public void rentVehicle(Member member, Item car, int days) {
+    public void rentVehicle(Member member, Item vehicle, int days) {
 
         // Hämtar prissättningen beroende på medlemsnivån
         PricePolicy policy = choosePolicy(member);
 
         // Skapar själva uthyrningen med all information samlad
-        Rental rental = new Rental(member, car, days, policy);
+        Rental rental = new Rental(member, vehicle, days, policy);
 
         // Sparar uthyrningen i listan
         rentals.add(rental);

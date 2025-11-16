@@ -9,11 +9,11 @@ public class Inventory {
     private List<Item> vehicles = new ArrayList<>();
 
     public Inventory() {
-        visaBilar(); // lägger in bilar vid start
+        visaFordon(); // lägger in bilar vid start
     }
 
     // Lägger in standardbilar i lagret
-    private void visaBilar() {
+    private void visaFordon() {
         vehicles.add(new Vehicle("Audi A3", "Audi", "A3", 600));
         vehicles.add(new Vehicle("Audi Q3", "Audi", "Q3", 750));
         vehicles.add(new Vehicle("Audi A4", "Audi", "A4", 700));

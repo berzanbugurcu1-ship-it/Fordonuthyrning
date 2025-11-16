@@ -28,8 +28,8 @@ public class MemberRegistry {
         }
 
         System.out.println("Medlemmar:");
-        for (Member m : members) {
-            System.out.println("- " + m);
+        for (Member member : members) {
+            System.out.println("- " + member);
         }
     }
 }
