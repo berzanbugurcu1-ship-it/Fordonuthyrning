@@ -52,13 +52,13 @@ public class Main {
                 case 3:
                     // Lägg till ny medlem
                     System.out.print("Namn: ");
-                    String namn = input.nextLine(); // Läser in namnet
+                    String name = input.nextLine(); // Läser in namnet
 
                     System.out.print("Medlemskap (Standard/Student): ");
-                    String typ = input.nextLine(); // Läser in typen
+                    String membershipLevel = input.nextLine(); // Läser in typen
 
                     // Skapar ny medlem med namn och typ
-                    Member nyMedlem = new Member(namn, typ);
+                    Member nyMedlem = new Member(name, membershipLevel);
                     memberRegistry.addMember(nyMedlem); // Lägger till i registret
                     System.out.println("Medlem tillagd!");
                     break;
