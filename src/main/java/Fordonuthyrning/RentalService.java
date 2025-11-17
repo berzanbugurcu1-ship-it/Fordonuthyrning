@@ -15,7 +15,7 @@ public class RentalService {
     // Student → studentpris, annars standardpris
     private PricePolicy choosePolicy(Member member) {
         if (member.getMembershipLevel().equals("Student")) {
-            return new StudentPricing();
+            return new StudentPricing();                       //privat hjälpmetod, som ger rätt pris beroende på användarens input
         }
         return new StandardPricing();
     }

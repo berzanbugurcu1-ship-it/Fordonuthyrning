@@ -14,10 +14,6 @@ public class Rental {
         this.days = days;
         this.totalPrice = policy.calculatePrice(vehicle.getDailyPrice(), days); // Polymorfism, Räknar ut totalpriset med rätt prissystem
     }
-
-    public Member getMember() { return member; }
-    public Item getVehicle() { return vehicle; }
-    public int getDays() { return days; }
     public double getTotalPrice() { return totalPrice; }
 
     @Override

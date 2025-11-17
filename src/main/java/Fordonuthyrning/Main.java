@@ -106,7 +106,7 @@ public class Main {
                     // Användaren väljer medlem
                     System.out.print("Nummer: ");
                     int medlemNummer2 = input.nextInt();
-                    input.nextLine(); // Tar bort enter-tryckningen
+                    input.nextLine();
                     // Hämtar den valda medlemmen (minus 1 för att listor börjar på 0)
                     Member member2 = memberRegistry.getAllMembers().get(medlemNummer2 - 1);
 
@@ -122,14 +122,14 @@ public class Main {
                     // Användaren väljer fordon
                     System.out.print("Nummer: ");
                     int fordonNummer = input.nextInt();
-                    input.nextLine(); // Tar bort enter-tryckningen
+                    input.nextLine();
                     // Hämtar det valda fordonet
                     Item vehicle = inventory.getVehicles().get(fordonNummer - 1);
 
                     // Frågar hur många dagar
                     System.out.print("Antal dagar: ");
                     int days = input.nextInt();
-                    input.nextLine(); // Tar bort enter-tryckningen
+                    input.nextLine();
 
                     // Skapar uthyrningen
                     rentalService.rentVehicle(member2, vehicle, days);
