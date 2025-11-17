@@ -13,17 +13,9 @@ public class Vehicle extends Item {
         this.model = model;        // sätter modellen
     }
 
-    public String getBrand() {
-        return brand;   // returnerar bilmärket
-    }
-
-    public String getModel() {
-        return model;   // returnerar modellen
-    }
-
     // Returnerar en textrepresentation av fordonet
     public String toString() {
-        return getName() + ", " + getDailyPrice() + ", " + getBrand() + ", " + getModel();
+        return getName() + ", " + getDailyPrice() + ", " + brand + ", " + model;
         // format: namn, pris, märke, modell
     }
 }
