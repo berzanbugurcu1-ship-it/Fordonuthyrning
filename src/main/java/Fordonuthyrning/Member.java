@@ -8,7 +8,7 @@ public class Member {
 
     // Konstruktor: skapar en ny medlem med namn + medlemsnivå
     public Member(String name, String membershipLevel) {
-        this.name = name;
+        this.name = name;   // parametern också heter name, nnars vet Java inte vilken menar
         this.membershipLevel = membershipLevel;
     }
 

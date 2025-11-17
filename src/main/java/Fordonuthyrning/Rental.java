@@ -12,9 +12,7 @@ public class Rental {
         this.member = member;
         this.vehicle = vehicle;
         this.days = days;
-
-        // Polymorfism, Räknar ut totalpriset med rätt prissystem
-        this.totalPrice = policy.calculatePrice(vehicle.getDailyPrice(), days);
+        this.totalPrice = policy.calculatePrice(vehicle.getDailyPrice(), days); // Polymorfism, Räknar ut totalpriset med rätt prissystem
     }
 
     public Member getMember() { return member; }

@@ -1,13 +1,12 @@
 package Fordonuthyrning;
 
 import java.util.ArrayList;
-import java.util.List;
 
 // Ansvarar för uthyrningar och för att räkna ihop total inkomst
 public class RentalService {
 
     // Lista över alla uthyrningar som har gjorts
-    private List<Rental> rentals = new ArrayList<>();
+    private ArrayList<Rental> rentals = new ArrayList<>();
 
     // Sammanlagd inkomst från alla uthyrningar
     private double totalIncome = 0;
@@ -47,7 +46,7 @@ public class RentalService {
     }
 
     // Returnerar alla uthyrningar
-    public List<Rental> getRentals() {
+    public ArrayList<Rental> getRentals() {
         return rentals;
     }
 }

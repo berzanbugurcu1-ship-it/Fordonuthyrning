@@ -1,12 +1,11 @@
 package Fordonuthyrning;
 
 import java.util.ArrayList;
-import java.util.List;
 
 // Håller reda på alla bilar som finns att hyra
 public class Inventory {
 
-    private List<Item> vehicles = new ArrayList<>();
+    private ArrayList<Item> vehicles = new ArrayList<>();
 
     public Inventory() {
         visaFordon(); // lägger in bilar vid start
@@ -22,7 +21,7 @@ public class Inventory {
         vehicles.add(new Motorcycle("Honda CBR", "Honda", "CBR600RR", 450));
     }
 
-    public List<Item> getVehicles() {
+    public ArrayList<Item> getVehicles() {
         return vehicles; // returnerar listan med alla bilar
     }
 }

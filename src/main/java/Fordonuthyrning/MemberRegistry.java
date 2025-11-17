@@ -1,12 +1,11 @@
 package Fordonuthyrning;
 
 import java.util.ArrayList;
-import java.util.List;
 
 // Register som håller reda på alla medlemmar i systemet
 public class MemberRegistry {
 
-    private List<Member> members = new ArrayList<>();
+    private ArrayList<Member> members = new ArrayList<>();
 
     // Lägger till en medlem i registret
     public void addMember(Member member) {
@@ -16,7 +15,7 @@ public class MemberRegistry {
     }
 
     // Returnerar hela medlemslistan
-    public List<Member> getAllMembers() {
+    public ArrayList<Member> getAllMembers() {
         return members;
     }
 

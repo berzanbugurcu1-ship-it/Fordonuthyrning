@@ -112,9 +112,9 @@ public class Main {
 
                     System.out.println("Välj fordon:");
 
-                    // Visar alla fordon med nummer
+                    // Visar alla fordon med nummer, använder for loop så
                     int nummer4 = 1;
-                    for (Item fordon : inventory.getVehicles()) {
+                    for (Item fordon : inventory.getVehicles()) {  // : = innebär inut i invneotry klassen-
                         System.out.println(nummer4 + ". " + fordon);
                         nummer4 = nummer4 + 1;
                     }
